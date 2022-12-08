@@ -22,25 +22,28 @@ function ViewByIdform() {
       .catch((error) => console.log("error", error));
   }, []);
 
-  const populateValues = {
-    ACCESS_CONTROL_TYPE: populate.ACCESS_CONTROL_TYPE,
-    PARAM_NAME: populate.PARAM_NAME,
-    PARAM_VALUE: populate.PARAM_VALUE,
-    COMPARISION_TYPE: populate.COMPARISION_TYPE,
-    PERMIT_TYPE: populate.PERMIT_TYPE,
-    REC_ID: populate.REC_ID,
-    STATUS: populate.STATUS,
-  };
-
-  // const popData = {
-  //   // api return same format data like this...........
-  //   ACCESS_CONTROL_TYPE: 1,
-  //   PARAM_NAME: 2,
-  //   PARAM_VALUE: 98,
-  //   COMPARISION_TYPE: 2,
-  //   PERMIT_TYPE: 1,
-  //   STATUS: "A",
+  console.log("popValue", populate);
+  // const populateValues = {
+  //   ACCESS_CONTROL_TYPE: populate.ACCESS_CONTROL_TYPE,
+  //   PARAM_NAME: populate.PARAM_NAME,
+  //   PARAM_VALUE: populate.PARAM_VALUE,
+  //   COMPARISION_TYPE: populate.COMPARISION_TYPE,
+  //   PERMIT_TYPE: populate.PERMIT_TYPE,
+  //   // REC_ID: populate.REC_ID,
+  //   STATUS: populate.STATUS,
   // };
+
+  // console.log("type", typeof populate.ACCESS_CONTROL_TYPE);
+  // console.log("jevan", populateValues);
+  const populateValues = {
+    // api return same format data like this...........
+    ACCESS_CONTROL_TYPE: 1,
+    PARAM_NAME: 2,
+    PARAM_VALUE: 98,
+    COMPARISION_TYPE: 2,
+    PERMIT_TYPE: 1,
+    STATUS: "A",
+  };
 
   return (
     <React.Fragment>
