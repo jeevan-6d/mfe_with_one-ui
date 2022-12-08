@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@oneui/6d-dynamic-form": "^2.0.3",
+    "@oneui/6d-table": "^0.5.4",
+    "@oneui/react-components": "^0.7.1",
+    "@oneui/react-scripts": "^4.0.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -34,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@oneui/6d-base-theme": "^1.6.9"
   }
 }
