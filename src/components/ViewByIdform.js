@@ -10,8 +10,6 @@ function ViewByIdform() {
 
   const R_ID = localStorage.getItem("REC_ID");
 
-  // console.log("RD come from Local", R_ID);
-
   useEffect(() => {
     fetch(`http://localhost:4000/api/access-control/fetch/${R_ID}`)
       .then((response) => response.json())
@@ -23,43 +21,24 @@ function ViewByIdform() {
   }, []);
 
   console.log("popValue", populate);
-  // const populateValues = {
-  //   ACCESS_CONTROL_TYPE: populate.ACCESS_CONTROL_TYPE,
-  //   PARAM_NAME: populate.PARAM_NAME,
-  //   PARAM_VALUE: populate.PARAM_VALUE,
-  //   COMPARISION_TYPE: populate.COMPARISION_TYPE,
-  //   PERMIT_TYPE: populate.PERMIT_TYPE,
-  //   // REC_ID: populate.REC_ID,
-  //   STATUS: populate.STATUS,
-  // };
-
-  // console.log("type", typeof populate.ACCESS_CONTROL_TYPE);
-  // console.log("jevan", populateValues);
   const populateValues = {
-    // api return same format data like this...........
-    ACCESS_CONTROL_TYPE: 1,
-    PARAM_NAME: 2,
-    PARAM_VALUE: 98,
-    COMPARISION_TYPE: 2,
-    PERMIT_TYPE: 1,
-    STATUS: "A",
+    ACCESS_CONTROL_TYPE: populate.ACCESS_CONTROL_TYPE,
+    PARAM_NAME: populate.PARAM_NAME,
+    PARAM_VALUE: populate.PARAM_VALUE,
+    COMPARISION_TYPE: populate.COMPARISION_TYPE,
+    PERMIT_TYPE: populate.PERMIT_TYPE,
+    STATUS: populate.STATUS,
   };
 
   return (
     <React.Fragment>
-      {console.log("in side the return", populateValues)}
-      <DynamicForm
-        ref={formRef}
-        fields={formFields}
-        populateData={populateValues}
-      />
-      {/* <h2>Clicked REC ID:-{populate.REC_ID}</h2>
-      <h5>ACCESS_CONTROL_TYPE:-{populate.ACCESS_CONTROL_TYPE}</h5>
-      <h5>COMPARISION_TYPE:-{populate.COMPARISION_TYPE}</h5>
-      <h5>PARAM_NAME:-{populate.PARAM_NAME}</h5>
-      <h5>PARAM_VALUE:-{populate.PARAM_VALUE}</h5>
-      <h5>PERMIT_TYPE:-{populate.PERMIT_TYPE}</h5>
-      <h5>REC_ID:-{populate.REC_ID}</h5> */}
+      {populateValues.ACCESS_CONTROL_TYPE ? (
+        <DynamicForm
+          ref={formRef}
+          fields={formFields}
+          populateData={populateValues}
+        />
+      ) : null}
     </React.Fragment>
   );
 }
